@@ -387,6 +387,100 @@
       margin-right: auto;
     }
 
+    /* ====== PRICING ====== */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .pricing-card {
+      background: var(--bg-card);
+      border: 1px solid rgba(139, 92, 246, 0.2);
+      border-radius: 16px;
+      padding: 2rem;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .pricing-card.featured {
+      border-color: var(--primary);
+      box-shadow: 0 0 30px rgba(139, 92, 246, 0.3);
+    }
+    .pricing-card:hover {
+      transform: translateY(-5px);
+    }
+    .pricing-card h3 {
+      font-family: var(--heading-font);
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: #fff;
+    }
+    .pricing-card .price {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--primary-light);
+      margin: 1rem 0;
+    }
+    .pricing-card .price span {
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--text-muted);
+    }
+    .pricing-card ul {
+      list-style: none;
+      margin: 1.5rem 0;
+      text-align: left;
+    }
+    .pricing-card li {
+      padding: 0.5rem 0;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+    .pricing-card li::before {
+      content: '✓ ';
+      color: var(--primary-light);
+    }
+
+    /* ====== LEGAL INFO ====== */
+    .legal-section {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    .legal-section h2 {
+      margin-bottom: 1.5rem;
+    }
+    .legal-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .legal-block {
+      background: var(--bg-card);
+      border-radius: 12px;
+      padding: 1.5rem;
+      border: 1px solid rgba(139, 92, 246, 0.15);
+    }
+    .legal-block h4 {
+      font-family: var(--heading-font);
+      font-size: 1.1rem;
+      color: var(--primary-light);
+      margin-bottom: 0.75rem;
+    }
+    .legal-block p, .legal-block ul {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    .legal-block ul {
+      list-style: none;
+      padding: 0;
+    }
+    .legal-block li {
+      padding: 0.25rem 0;
+    }
+
     /* ====== FOOTER ====== */
     footer {
       position: relative;
@@ -412,6 +506,16 @@
     }
     .social-links a:hover {
       transform: scale(1.2);
+    }
+    .footer-legal {
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(139, 92, 246, 0.1);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+    .footer-legal p {
+      margin: 0.3rem 0;
     }
 
     /* ====== REVEAL ANIMATIONS ====== */
@@ -583,6 +687,45 @@
       </div>
     </section>
 
+    <!-- PRICING -->
+    <section class="reveal">
+      <h2>Тарифы</h2>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <h3>Бесплатно</h3>
+          <div class="price">0 ₽</div>
+          <ul>
+            <li>Карта дня — каждый день</li>
+            <li>Базовые толкования</li>
+            <li>История последних 7 дней</li>
+            <li>Виджет на главный экран</li>
+          </ul>
+        </div>
+        <div class="pricing-card featured">
+          <h3>Премиум</h3>
+          <div class="price">299 ₽ <span>/ месяц</span></div>
+          <ul>
+            <li>Всё из бесплатного тарифа</li>
+            <li>Неограниченные персональные чтения</li>
+            <li>Расширенные расклады (3 карты, Кельтский крест)</li>
+            <li>Полная история всех чтений</li>
+            <li>AI-анализ паттернов</li>
+            <li>Приоритетная поддержка</li>
+          </ul>
+        </div>
+        <div class="pricing-card">
+          <h3>Премиум Год</h3>
+          <div class="price">1990 ₽ <span>/ год</span></div>
+          <ul>
+            <li>Всё из Премиум</li>
+            <li>Экономия 45%</li>
+            <li>Эксклюзивные колоды карт</li>
+            <li>Ранний доступ к новым функциям</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
     <!-- FAQ -->
     <section class="reveal">
       <h2>Частые вопросы</h2>
@@ -628,17 +771,64 @@
       </div>
     </section>
 
+    <!-- LEGAL INFO -->
+    <section class="legal-section reveal">
+      <h2>Информация</h2>
+      <div class="legal-grid">
+        <div class="legal-block">
+          <h4>Описание услуги</h4>
+          <p>Third Eye Whisper — мобильное приложение для получения персональных карт таро и интерпретаций с использованием AI. Доступно на iOS и Android.</p>
+          <ul>
+            <li>• Бесплатный тариф: карта дня, базовые толкования</li>
+            <li>• Премиум (299 ₽/мес): расширенные расклады, неограниченные чтения</li>
+            <li>• Премиум Год (1990 ₽/год): все функции + бонусы</li>
+          </ul>
+        </div>
+        <div class="legal-block">
+          <h4>Оплата и доставка</h4>
+          <ul>
+            <li>• Оплата через App Store / Google Play</li>
+            <li>• Подписка активируется мгновенно после оплаты</li>
+            <li>• Автоматическое продление (можно отключить)</li>
+            <li>• Доступ к премиум-функциям — сразу после оплаты</li>
+          </ul>
+        </div>
+        <div class="legal-block">
+          <h4>Возврат и отмена</h4>
+          <ul>
+            <li>• Отмена подписки — в любой момент в настройках App Store / Google Play</li>
+            <li>• Доступ сохраняется до конца оплаченного периода</li>
+            <li>• Возврат средств — через поддержку App Store / Google Play</li>
+          </ul>
+        </div>
+        <div class="legal-block">
+          <h4>Контакты и реквизиты</h4>
+          <ul>
+            <li>• Email: support@thirdeyewhisper.site</li>
+            <li>• Telegram: @thirdeyewhisper</li>
+          </ul>
+          <p style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(139, 92, 246, 0.2);">
+            <strong>Самозанятый:</strong><br>
+            Бабаян Михаил Гарикович<br>
+            ИНН: 616117760374
+          </p>
+        </div>
+      </div>
+    </section>
+
     <!-- FOOTER -->
     <footer class="reveal">
       <div class="social-links">
+        <a href="mailto:support@thirdeyewhisper.site" title="Email">✉️</a>
         <a href="#" title="Telegram">💬</a>
-        <a href="#" title="Instagram">📷</a>
-        <a href="#" title="Email">✉️</a>
       </div>
       <p>© 2026 Third Eye Whisper. Все права защищены.</p>
       <p style="margin-top: 0.5rem; font-size: 0.75rem;">
-        <a href="#">Политика конфиденциальности</a> · <a href="#">Условия использования</a>
+        <a href="#legal">Политика конфиденциальности</a> · <a href="#legal">Условия использования</a>
       </p>
+      <div class="footer-legal">
+        <p>Самозанятый: Бабаян Михаил Гарикович · ИНН: 616117760374</p>
+      </div>
     </footer>
   </div>
 
